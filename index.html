@@ -101,6 +101,13 @@
                 margin: 5px 0;
             }
         }
+        ol {
+            text-align: left; /* Aligns the list to the left */
+            padding-left: 20px; /* Adds padding to the left */
+        }
+        li {
+            margin-bottom: 10px; /* Adds space between list items */
+        }
     </style>
 </head>
 <body>
@@ -113,15 +120,14 @@
     <p><strong>Amount:</strong> ₹200</p>
     <p>You can contribute more to support the event during the payment process.</p>
     <div class="divider"></div>
-    <p class="note">
-         To make a payment, please copy the UPI ID below, open your favorite UPI app, paste it in the payment section, and proceed to pay:
-    </p>
-    <div class="divider"></div>
-    <p class="note">
-        To scan the QR code and pay, download the image and scan using your UPI app.
-    </p>
-    <img src="./assets/qr-code.jpeg" alt="QR Code" style="width: 100px; height: 100px; margin: 10px 0;">
-    <a href="./assets/qr-code.jpeg" download class="copy-button">Download QR Code</a>
+    <p class="headd">To complete your payment, please follow these steps:</p>
+    <ol>
+        <li>Click the "Download" button below to download the image.</li>
+        <li>Open your UPI app and scan the downloaded image.</li>
+        <li>Proceed to make your payment.</li>
+    </ol>
+    <img src="./assets/qr-code.jpeg" alt="QR Code" style="width: 150px; height: 150px; margin: 10px 0;">
+    <a href="./assets/qr-code.jpeg" download class="copy-button">Download </a>
     <div class="divider"></div>
     <h2>Payment Methods</h2>
     <div class="upi-logos">
@@ -137,3 +143,4 @@
 
 </body>
 </html>
+
