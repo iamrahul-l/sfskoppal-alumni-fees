@@ -116,9 +116,6 @@
     <p class="note">
          To make a payment, please copy the UPI ID below, open your favorite UPI app, paste it in the payment section, and proceed to pay:
     </p>
-    <input type="text" id="textToCopy" value="9964290185-2@axl" class="text-input" readonly>
-    <button class="copy-button" onclick="copyText()">Copy UPI ID</button>
-    
     <div class="divider"></div>
     <p class="note">
         To scan the QR code and pay, download the image and scan using your UPI app.
@@ -138,13 +135,5 @@
     <p>Your participation helps make this event a memorable experience for all. We look forward to seeing you there!</p>
 </div>
 
-<script>
-    function copyText() {
-        const textField = document.getElementById("textToCopy");
-        textField.select();
-        document.execCommand("copy");
-        alert("Copied: " + textField.value);
-    }
-</script>
 </body>
 </html>
