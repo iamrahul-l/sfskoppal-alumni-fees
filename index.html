@@ -4,52 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SFS High School Alumni Registration Fees</title>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500&display=swap" rel="stylesheet">
     <style>
-
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
-            background-color: #f9f9f9;
-            color: #333;
+            font-family: 'SF Pro Display', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1c1c1e; 
+            color: #f5f5f7; 
         }
-        h1 {
-            color: #2c3e50;
-            text-align: center;
-        }
+
         .container {
-            background: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
+            background: #2c2c2e; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 40px;
             max-width: 500px;
-            margin: auto;
+            margin: 60px auto;
             text-align: center;
         }
-        h2 {
-            color: #34495e;
+
+        h1 {
+            color: #ffffff; 
+            margin-bottom: 15px;
+            font-size: 28px;
         }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #3498db;
+
+        h2 {
+            color: #e0e0e0; 
+            margin-top: 20px;
+            font-size: 22px;
+        }
+
+        .text-input {
+            width: calc(100% - 24px);
+            padding: 12px;
+            border: 1px solid #555; 
+            border-radius: 10px; 
+            background-color: #3a3a3c; 
+            color: #f5f5f7; 
+            font-size: 16px;
+            margin-top: 10px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .button, .copy-button {
+            padding: 14px;
+            background-color: #007aff; 
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            transition: background-color 0.3s ease;
+            border-radius: 12px;
+            margin: 10px 0;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+            width: calc(100% - 20px);
+            font-size: 16px;
         }
-        .button:hover {
-            background-color: #2980b9;
+
+        .button:hover, .copy-button:hover {
+            background-color: #0051a8; 
+            transform: translateY(-2px); 
         }
+
+        .note {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #d1d1d6; 
+        }
+
+        .divider {
+            height: 1px;
+            background-color: #555; 
+            margin: 20px 0;
+        }
+
         .upi-logos {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             margin-top: 20px;
         }
+
         .upi-logo {
-            width: 50px;
+            width: 60px;
             margin: 0 10px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            .button, .copy-button {
+                width: 100%;
+                margin: 5px 0;
+            }
         }
     </style>
 </head>
@@ -57,25 +106,50 @@
 
 <div class="container">
     <h1>SFS High School Alumni Registration Fees</h1>
-    <p>We are excited to invite you to register for our upcoming alumni event. Join us in celebrating our school’s legacy and reconnecting with fellow graduates!</p>
-    
+    <p>Join us in celebrating our school’s legacy and reconnecting with fellow graduates!</p>
+
     <h2>Registration Fee</h2>
     <p><strong>Amount:</strong> ₹200</p>
-    <p>If you wish to contribute more to support the event, you can enter any additional amount during the payment process.</p>
+    <p>You can contribute more to support the event during the payment process.</p>
 
-    <a class="button" href="phonepe://pay?pa=9964290185-2@axl&pn=Husenbasha&mc=0000&mode=02&purpose=00"> Click Here to Pay Using Phone Pe <img src="./assets/phonepe.png" alt="Phonpe" style="width: 25px; height: 25px; vertical-align: middle; margin-left: 6px;"></a>
-    <a class="button" href="googlepay://pay?pa=9964290185-2@axl&pn=Husenbasha&mc=0000&mode=02&purpose=00">Click Here to Pay Using Google Pay <img src="./assets/gpay.png" alt="Gpay" style="width: 25px; height: 25px; vertical-align: middle; margin-left: 6px;"></a>
-    <a class="button" href="paytm://pay?pa=9964290185-2@axl&pn=Husenbasha&mc=0000&mode=02&purpose=00">Click Here to Pay Using Paytm <img src="./assets/paytm.webp" alt="Paytm" style="width: 30px; height: 30px; vertical-align: middle; margin-left: 6px;"></a>
+    <div>
+        <a class="button" href="phonepe://pay?pa=9964290185-2@axl&pn=Husenbasha&mc=0000&mode=02&purpose=00">Pay with PhonePe (Apple Devices)</a>
+        <div class="divider"></div>
+        <a class="button" href="upi://pay?pa=9964290185-2@axl&pn=Husenbasha&mc=0000&mode=02&purpose=00">Pay with Google Pay (Android Devices)</a>
+    </div>
+    <div class="divider"></div>
+    <p class="note">
+        If the above payment methods don't work, copy the UPI ID below to your favorite UPI app.
+    </p>
+    <input type="text" id="textToCopy" value="9964290185-2@axl" class="text-input" readonly>
+    <button class="copy-button" onclick="copyText()">Copy UPI ID</button>
+    
+    <div class="divider"></div>
+    <p class="note">
+        To scan the QR code and pay, download the image and scan using your UPI app.
+    </p>
+    <img src="./assets/qr-code.jpeg" alt="QR Code" style="width: 100px; height: 100px; margin: 10px 0;">
+    <a href="./assets/qr-code.jpeg" download class="copy-button">Download QR Code</a>
+    <div class="divider"></div>
     <h2>Payment Methods</h2>
     <div class="upi-logos">
-        <img src="./assets/phonepe.png" alt="UPI Logo 1" class="upi-logo">
-        <img src="./assets/gpay.png" alt="UPI Logo 2" class="upi-logo">
-        <img src="./assets/paytm.webp" alt="UPI Logo 3" class="upi-logo">
+        <img src="./assets/phonepe.png" alt="PhonePe" class="upi-logo">
+        <img src="./assets/gpay.png" alt="Google Pay" class="upi-logo">
+        <img src="./assets/paytm.webp" alt="Paytm" class="upi-logo">
+        <img src="./assets/upi.jpg" alt="UPI" class="upi-logo">
     </div>
 
     <h2>Thank You for Your Support!</h2>
-    <p>Your participation and contributions will help make this event a memorable experience for all. We look forward to seeing you there!</p>
+    <p>Your participation helps make this event a memorable experience for all. We look forward to seeing you there!</p>
 </div>
 
+<script>
+    function copyText() {
+        const textField = document.getElementById("textToCopy");
+        textField.select();
+        document.execCommand("copy");
+        alert("Copied the text: " + textField.value);
+    }
+</script>
 </body>
 </html>
