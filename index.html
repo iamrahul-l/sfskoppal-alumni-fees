@@ -112,15 +112,9 @@
     <h2>Registration Fee</h2>
     <p><strong>Amount:</strong> ₹200</p>
     <p>You can contribute more to support the event during the payment process.</p>
-
-    <div>
-        <a class="button" href="phonepe://pay?pa=9964290185-2@axl&pn=Husenbasha&mc=0000&mode=02&purpose=00">Pay with PhonePe (Apple Devices)</a>
-        <div class="divider"></div>
-        <a class="button" href="upi://pay?pa=9964290185-2@axl&pn=Husenbasha&mc=0000&mode=02&purpose=00">Pay with Any UPI App (Android Devices)</a>
-    </div>
     <div class="divider"></div>
     <p class="note">
-        If the above payment methods don't work, copy the UPI ID below to your favorite UPI app.
+         To make a payment, please copy the UPI ID below, open your favorite UPI app, paste it in the payment section, and proceed to pay:
     </p>
     <input type="text" id="textToCopy" value="9964290185-2@axl" class="text-input" readonly>
     <button class="copy-button" onclick="copyText()">Copy UPI ID</button>
@@ -149,7 +143,7 @@
         const textField = document.getElementById("textToCopy");
         textField.select();
         document.execCommand("copy");
-        alert("Copied the text: " + textField.value);
+        alert("Copied: " + textField.value);
     }
 </script>
 </body>
